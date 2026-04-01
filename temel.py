@@ -59,3 +59,20 @@ for i in range(10):
         break       # 7'de dur
     print(i)
 
+print("ENVANTER DENEME")
+envanter = ["kılıç", "kalkan", "iksir", "ok"]
+
+print("--- Envanter ---")
+for i, esya in enumerate(envanter):
+    print(f"{i+1}. {esya}")
+
+
+aranan = "iksir"
+if aranan in envanter:
+    print(f"{aranan} envanterinde var!")
+else:
+    print(f"{aranan} bulunamadı.")
+
+
+uzun_esyalar = [esya for esya in envanter if len(esya) > 3]
+print(uzun_esyalar)
