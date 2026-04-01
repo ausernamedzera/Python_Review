@@ -58,4 +58,4 @@ for i in range(10):
     elif i == 7:
         break       # 7'de dur
     print(i)
-    
+
