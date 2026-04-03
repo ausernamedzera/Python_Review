@@ -5,7 +5,7 @@ def take_item():
 
 def item_control(item):
     if item in shopping_list:
-        print("Item Already Exists")
+        print(f"{item} Already Exists")
         return False
     elif item not in shopping_list:
         print(f"the {item} is not in your Shopping List. delete failed")
@@ -14,22 +14,17 @@ def item_control(item):
         return True
 
 def add_item(item):
-    if item_type(item):
-        if item in shopping_list:
-            print("Item Already Exists")
-            return False
-            # item listede varsa looptan bir daha istemesi lazım.
-        else:
-            shopping_list.append(item)
-            return True
+    if item_type(item) & item_control(item):
+        shopping_list.append(item)
     else:
-        print("Item is not valid")
+        print("something is wrong")
         return False
 
 def item_type(item):
     if type(item) == str:
         return True
     else:
+        print("Item is not valid")
         return False
 
 
