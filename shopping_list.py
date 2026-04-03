@@ -16,6 +16,7 @@ def item_control(item):
 def add_item(item):
     if item_type(item) & item_control(item):
         shopping_list.append(item)
+        return True
     else:
         print("something is wrong")
         return False
