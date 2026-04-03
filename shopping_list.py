@@ -9,7 +9,9 @@ def item_control(item):
         return False
     elif item not in shopping_list:
         print(f"the {item} is not in your Shopping List. delete failed")
-
+        return False
+    else:
+        return True
 
 def add_item(item):
     if item_type(item):
