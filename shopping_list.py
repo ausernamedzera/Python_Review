@@ -7,6 +7,9 @@ def item_control(item):
     if item in shopping_list:
         print("Item Already Exists")
         return False
+    elif item not in shopping_list:
+        print(f"the {item} is not in your Shopping List. delete failed")
+
 
 def add_item(item):
     if item_type(item):
