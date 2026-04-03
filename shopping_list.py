@@ -3,6 +3,11 @@ def take_item():
     item = input("Welcome to your Shopping List Add item in it:").capitalize()
     return item
 
+def item_control(item):
+    if item in shopping_list:
+        print("Item Already Exists")
+        return False
+
 def add_item(item):
     if item_type(item):
         if item in shopping_list:
