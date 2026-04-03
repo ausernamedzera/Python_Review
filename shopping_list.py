@@ -1,8 +1,19 @@
 shopping_list = []
+
+#Take Item
 def take_item():
     item = input("Welcome to your Shopping List Add item in it:").capitalize()
     return item
 
+#Control the type of item
+def item_type(item):
+    if type(item) == str:
+        return True
+    else:
+        print("Item is not valid")
+        return False
+
+#Control the item if it is shopping list or not
 def item_control(item):
     if item in shopping_list:
         print(f"{item} Already Exists")
@@ -13,6 +24,7 @@ def item_control(item):
     else:
         return True
 
+# Add the item
 def add_item(item):
     if item_type(item) & item_control(item):
         shopping_list.append(item)
@@ -21,14 +33,7 @@ def add_item(item):
         print("something is wrong")
         return False
 
-def item_type(item):
-    if type(item) == str:
-        return True
-    else:
-        print("Item is not valid")
-        return False
-
-
+# The Menu
 def greeting():
     print("=== Shopping List ===")
     answer = input("Commands: 1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
@@ -47,10 +52,10 @@ def greeting():
         print("Item is not valid")
         return False
 
+#Main function
 def main():
     while True:
         if not greeting():
             break
-
-
+#Run the Program
 main()
