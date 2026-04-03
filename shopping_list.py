@@ -56,8 +56,11 @@ def greeting():
         shopping_item = take_item()
         add_item(shopping_item)
         yes_no = input("Item Added \n do you want to add another item?")
-        if yes_no == "yes":
-            return True
+        while yes_no == "yes":
+            shopping_item = take_item()
+            add_item(shopping_item)
+            yes_no = input("Item Added \n do you want to add another item?")
+
         else:
             return False
     else:
