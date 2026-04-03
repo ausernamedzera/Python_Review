@@ -39,7 +39,7 @@ def add_item(item):
         print(f"Item is not valid")
         return False
     elif item_control(item):
-        print("the is already existed")
+        print(f"the {item} is already existed")
         return False
     else:
         print("something is wrong")
@@ -54,12 +54,12 @@ def greeting():
         return True
     elif answer == "2":
         shopping_item = take_item()
-        add_item(shopping_item)
-        yes_no = input("Item Added \n do you want to add another item?")
-        while yes_no == "yes":
-            shopping_item = take_item()
-            add_item(shopping_item)
+        if add_item(shopping_item):
             yes_no = input("Item Added \n do you want to add another item?")
+            while yes_no == "yes":
+                shopping_item = take_item()
+                add_item(shopping_item)
+                yes_no = input("do you want to add another item?")
 
         else:
             return False
