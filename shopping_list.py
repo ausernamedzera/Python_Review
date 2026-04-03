@@ -16,19 +16,31 @@ def item_type(item):
 #Control the item if it is shopping list or not
 def item_control(item):
     if item in shopping_list:
-        print(f"{item} Already Exists")
+      #  print(f"{item} Already Exists")
+        return True
+    else:
         return False
-    elif item not in shopping_list:
+
+#Delete
+def delete_item(item):
+    if item_control(item):
         print(f"the {item} is not in your Shopping List. delete failed")
         return False
     else:
+        shopping_list.remove(item)
         return True
 
 # Add the item
 def add_item(item):
-    if item_type(item) & item_control(item):
+    if item_type(item) & item_control(item)!= True:
         shopping_list.append(item)
         return True
+    elif not item_type(item):
+        print(f"Item is not valid")
+        return False
+    elif item_control(item):
+        print("the is already existed")
+        return False
     else:
         print("something is wrong")
         return False
