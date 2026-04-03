@@ -41,6 +41,10 @@ def greeting():
         print("Item is not valid")
         return False
 
-while True:
-    if not greeting():
-        break
+def main():
+    while True:
+        if not greeting():
+            break
+
+
+main()
