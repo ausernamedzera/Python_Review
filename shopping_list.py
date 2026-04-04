@@ -30,6 +30,13 @@ def delete_item(item):
         shopping_list.remove(item)
         return True
 
+#Show the list
+def show_shopping_list():
+    a = 1
+    for i in shopping_list:
+        print(f"{a}-{i}")
+        a += 1
+
 # Add the item
 def add_item(item):
     if item_type(item) & item_control(item)!= True:
@@ -51,8 +58,8 @@ def greeting():
     answer = input("Commands: (use only a digit)\n"
                    "1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
     #answering type'ı string olmalı
-    if answer == "1":
-        return True
+    if answer == "1" or answer == 1:
+        show_shopping_list()
     elif answer == "2":
         shopping_item = take_item()
         if add_item(shopping_item):
