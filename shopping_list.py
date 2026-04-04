@@ -48,7 +48,8 @@ def add_item(item):
 # The Menu
 def greeting():
     print("=== Shopping List ===")
-    answer = input("Commands: 1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
+    answer = input("Commands: (use only a digit)\n"
+                   "1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
     #answering type'ı string olmalı
     if answer == "1":
         return True
