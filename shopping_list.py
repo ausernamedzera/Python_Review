@@ -80,7 +80,8 @@ def greeting():
             answer_y_n = input("Wanna add items? y/n")
             if yn(answer_y_n) == "yes":
                 add_item(take_item())
-                return True
+                print("items added")
+                greeting()
             elif yn(answer_y_n) == "no":
                 greeting()
             else:
