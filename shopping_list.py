@@ -90,10 +90,14 @@ def greeting():
         shopping_item = take_item()
         if add_item(shopping_item):
             yes_no = input("Item Added \n do you want to add another item?")
-            while yes_no == "yes":
+            while yes_no == "yes" or "y":
                 shopping_item = take_item()
                 add_item(shopping_item)
                 yes_no = input("do you want to add another item?")
+                if yes_no == "no" or "n":
+                    show_shopping_list()
+                break
+            greeting()
 
         else:
             return False
