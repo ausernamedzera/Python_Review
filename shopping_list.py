@@ -115,7 +115,7 @@ def greeting():
         print("Thank you for using Shopping List, see you next time!")
         return False
     else:
-        print("Item is not valid")
+        print("please enter only digits 1 to 4")
         return False
 
 #Main function
