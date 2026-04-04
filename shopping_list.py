@@ -56,6 +56,16 @@ def add_item(item):
         print("something is wrong")
         return False
 
+#yes_no
+def yes_no(answer):
+    if answer == "yes" or answer == "y":
+        return True
+    elif answer == "no" or answer == "n":
+        return True
+    else:
+        print("answer is not valid")
+        return False
+
 # The Menu
 def greeting():
     print("=== Shopping List ===")
@@ -64,7 +74,7 @@ def greeting():
     #answering type'ı string olmalı
     if answer == "1" or answer == 1:
         if not show_shopping_list():
-            print("Wanna add items? y/n")
+            print("Wanna add items? y/n") #yes no için ayrı function
     elif answer == "2":
         shopping_item = take_item()
         if add_item(shopping_item):
