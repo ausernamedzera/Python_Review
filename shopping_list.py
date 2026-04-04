@@ -79,8 +79,7 @@ def greeting():
         if not show_shopping_list():
             answer_y_n = input("Wanna add items? y/n")
             if yn(answer_y_n) == "yes":
-                take_item()
-                add_item(shopping_list)
+                add_item(take_item())
                 return True
             elif yn(answer_y_n) == "no":
                 greeting()
