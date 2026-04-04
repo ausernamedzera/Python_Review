@@ -57,13 +57,15 @@ def add_item(item):
         return False
 
 #yes_no
-def yes_no(answer):
+def yn(answer):
     if answer == "yes" or answer == "y":
-        return True
+        answer = "yes"
+        return answer
     elif answer == "no" or answer == "n":
-        return True
+        answer = "no"
+        return answer
     else:
-        print("answer is not valid")
+        print("answer is not valid")        #burada bir hata olabilir. answer is not validse... loopta kalsın
         return False
 
 # The Menu
@@ -72,10 +74,20 @@ def greeting():
     answer = input("Commands: (use only a digit)\n"
                    "1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
     #answering type'ı string olmalı
-    if answer == "1" or answer == 1:
+
+    while answer == "1" or answer == 1:
         if not show_shopping_list():
-            print("Wanna add items? y/n") #yes no için ayrı function
-    elif answer == "2":
+            answer_y_n = input("Wanna add items? y/n")
+            if yn(answer_y_n) == "yes":
+                take_item()
+                add_item(shopping_list)
+                return True
+            elif yn(answer_y_n) == "no":
+                greeting()
+            else:
+                print("something is wrong")
+
+    if answer == "2":
         shopping_item = take_item()
         if add_item(shopping_item):
             yes_no = input("Item Added \n do you want to add another item?")
