@@ -102,6 +102,18 @@ def greeting():
 
         else:
             return False
+    elif answer == "3":
+        answer_delete_item = delete_item(input("Item to be deleted?"))
+        if answer_delete_item:
+            print("Item deleted")
+            print("your new list")
+            show_shopping_list()
+            greeting()
+        else:
+            print("something is wrong")
+    elif answer == "4":
+        print("Thank you for using Shopping List, see you next time!")
+        return False
     else:
         print("Item is not valid")
         return False
