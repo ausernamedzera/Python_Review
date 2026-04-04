@@ -33,9 +33,13 @@ def delete_item(item):
 #Show the list
 def show_shopping_list():
     a = 1
-    for i in shopping_list:
-        print(f"{a}-{i}")
-        a += 1
+    if not shopping_list: # not kalıbıyla listenin içini kontrol ettik
+        print("Your Shopping List is empty")
+        return False
+    else:
+        for i in shopping_list:
+            print(f"{a}-{i}")
+            a += 1
 
 # Add the item
 def add_item(item):
@@ -59,7 +63,8 @@ def greeting():
                    "1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
     #answering type'ı string olmalı
     if answer == "1" or answer == 1:
-        show_shopping_list()
+        if not show_shopping_list():
+            print("Wanna add items? y/n")
     elif answer == "2":
         shopping_item = take_item()
         if add_item(shopping_item):
