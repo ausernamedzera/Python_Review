@@ -106,7 +106,7 @@ def greeting():
 
     elif answer == "3":
         while True:
-            if not show_shopping_list():
+            if show_shopping_list():
                 print("There is nothing to delete, you are returning to main menu")
                 break
             answer_delete_item = delete_item(input("Item to be deleted?").capitalize())
@@ -119,7 +119,7 @@ def greeting():
                 print("something is wrong try again")
                 answer_3 = yn(input("return to main menu: y/n"))
                 if answer_3 == "yes":
-                    greeting()
+                    break
                 else:
                     return False
         greeting()
