@@ -97,7 +97,7 @@ def greeting():
                     a= take_item()
                     add_item(a)
                 elif yn(answer_y_n) == "no":
-                    break
+                    greeting()
                 else:
                     break
 
