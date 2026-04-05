@@ -43,6 +43,7 @@ def show_shopping_list():
         for i in shopping_list:
             print(f"{a}-{i}")
             a += 1
+    return None
 
 # Add the item
 def add_item(item):
@@ -77,7 +78,6 @@ def greeting():
     print("=== Shopping List ===")
     answer = input("Commands: (use only a digit)\n"
                    "1-Show your list, 2-Add your list, 3-Delete from the list, 4-Quit: ")
-    #answering type'ı string olmalı
 
     while answer == "1" or answer == 1:
         if not show_shopping_list():
@@ -135,7 +135,8 @@ def greeting():
         return False
     else:
         print("please enter only digits 1 to 4")
-        return False
+        return greeting()
+
 
 #Main function
 def main():
