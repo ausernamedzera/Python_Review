@@ -11,4 +11,7 @@ def add_product(product):
 def show_products():
     pass
 
+#delete a product
+def delete_product(product):
+    pass
 
