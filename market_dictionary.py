@@ -15,3 +15,7 @@ def show_products():
 def delete_product(product):
     pass
 
+#total
+def total(product):
+    pass
+
