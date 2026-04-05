@@ -115,6 +115,8 @@ def greeting():
                 print("Item deleted")
                 if not shopping_list:
                     print("all items are deleted")
+                    print("There is nothing to delete, you are returning to main menu")
+                    break
                 else:
                     print("your new list")
                     show_shopping_list()
