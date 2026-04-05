@@ -44,6 +44,7 @@ def show_shopping_list():
 # Add the item
 def add_item(item):
     if item_type(item) & item_control(item)!= True:
+        print("item added")
         shopping_list.append(item)
         return True
     elif not item_type(item):
@@ -91,7 +92,6 @@ def greeting():
         shopping_item = take_item()
         if add_item(shopping_item):
             while True:
-                print("item added")
                 answer_y_n = input("Wanna add items? y/n")
                 if yn(answer_y_n) == "yes":
                     a= take_item()
