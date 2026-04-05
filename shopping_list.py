@@ -23,7 +23,10 @@ def item_control(item):
 
 #Delete
 def delete_item(item):
-    if item_control(item):
+    if not shopping_list:
+        print("Your Shopping List is empty")
+        greeting()
+    if not item_control(item):
         print(f"the {item} is not in your Shopping List. delete failed")
         return False
     else:
@@ -102,14 +105,22 @@ def greeting():
                     break
 
     elif answer == "3":
-        answer_delete_item = delete_item(input("Item to be deleted?"))
-        if answer_delete_item:
-            print("Item deleted")
-            print("your new list")
-            show_shopping_list()
-            greeting()
-        else:
-            print("something is wrong")
+        while True:
+            answer_delete_item = delete_item(input("Item to be deleted?").capitalize())
+            if answer_delete_item:
+                print("Item deleted")
+                print("your new list")
+                show_shopping_list()
+                break
+            else:
+                print("something is wrong try again")
+                answer_3 = yn(input("return to main menu: y/n"))
+                if answer_3 == "yes":
+                    greeting()
+                else:
+                    return False
+        greeting()
+
     elif answer == "4":
         print("Thank you for using Shopping List, see you next time!")
         return False
