@@ -19,3 +19,6 @@ def delete_product(product):
 def total(product):
     pass
 
+#quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
+def close_market():
+    pass
