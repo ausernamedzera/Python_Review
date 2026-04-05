@@ -106,6 +106,9 @@ def greeting():
 
     elif answer == "3":
         while True:
+            if not show_shopping_list():
+                print("There is nothing to delete, you are returning to main menu")
+                break
             answer_delete_item = delete_item(input("Item to be deleted?").capitalize())
             if answer_delete_item:
                 print("Item deleted")
