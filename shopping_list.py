@@ -100,10 +100,10 @@ def greeting():
                     a= take_item()
                     add_item(a)
                 elif yn(answer_y_n) == "no":
-                    greeting()
+                    return greeting()
                 else:
                     print("answer is not valid. returning to main menu")
-                    greeting()
+                    return greeting()
 
     elif answer == "3":
         while True:
@@ -128,7 +128,7 @@ def greeting():
                     break
                 else:
                     return False
-        greeting()
+        return greeting()
 
     elif answer == "4":
         print("Thank you for using Shopping List, see you next time!")
