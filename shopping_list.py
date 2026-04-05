@@ -90,18 +90,17 @@ def greeting():
     if answer == "2":
         shopping_item = take_item()
         if add_item(shopping_item):
-            yes_no = input("Item Added \n do you want to add another item?")
-            while yes_no == "yes" or "y":
-                shopping_item = take_item()
-                add_item(shopping_item)
-                yes_no = input("do you want to add another item?")
-                if yes_no == "no" or "n":
-                    show_shopping_list()
-                break
-            greeting()
+            while True:
+                print("item added")
+                answer_y_n = input("Wanna add items? y/n")
+                if yn(answer_y_n) == "yes":
+                    a= take_item()
+                    add_item(a)
+                elif yn(answer_y_n) == "no":
+                    break
+                else:
+                    break
 
-        else:
-            return False
     elif answer == "3":
         answer_delete_item = delete_item(input("Item to be deleted?"))
         if answer_delete_item:
