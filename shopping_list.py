@@ -69,7 +69,7 @@ def yn(answer):
         answer = "no"
         return answer
     else:
-        print("answer is not valid")        #burada bir hata olabilir. answer is not validse... loopta kalsın
+                #burada bir hata olabilir. answer is not validse... loopta kalsın
         return False
 
 # The Menu
@@ -102,7 +102,8 @@ def greeting():
                 elif yn(answer_y_n) == "no":
                     greeting()
                 else:
-                    break
+                    print("answer is not valid. returning to main menu")
+                    greeting()
 
     elif answer == "3":
         while True:
