@@ -112,9 +112,12 @@ def greeting():
             answer_delete_item = delete_item(input("Item to be deleted?").capitalize())
             if answer_delete_item:
                 print("Item deleted")
-                print("your new list")
-                show_shopping_list()
-                break
+                if not shopping_list:
+                    print("all items are deleted")
+                else:
+                    print("your new list")
+                    show_shopping_list()
+                    break
             else:
                 print("something is wrong try again")
                 answer_3 = yn(input("return to main menu: y/n"))
