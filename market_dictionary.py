@@ -24,7 +24,7 @@ def total(product):
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
-    pass
+    return False
 
 
 show_products()
