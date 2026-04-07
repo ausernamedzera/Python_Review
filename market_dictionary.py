@@ -12,7 +12,8 @@ def add_product(product, value):
 
 #show the market's products
 def show_products():
-    pass
+    for key, value in market.items():
+        print(key, value)
 
 #delete a product
 def delete_product(product):
