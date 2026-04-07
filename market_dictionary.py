@@ -1,11 +1,14 @@
 # empty dictionary
 market = {
-
+    "Fruit": "Price",
+    "Strawberry": 13.4
 }
+print(len(market))
+
 
 #adding new products
-def add_product(product):
-    pass
+def add_product(product, value):
+    market[product] = value
 
 #show the market's products
 def show_products():
