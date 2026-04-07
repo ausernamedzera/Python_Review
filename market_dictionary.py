@@ -3,7 +3,6 @@ market = {
     "Fruit": "Price",
     "Strawberry": 13.4
 }
-print(len(market))
 
 
 #adding new products
@@ -13,7 +12,7 @@ def add_product(product, value):
 #show the market's products
 def show_products():
     for key, value in market.items():
-        print(key, value)
+        print(key, value) #daha estetik durması için ayarlama yap
 
 #delete a product
 def delete_product(product):
@@ -26,3 +25,6 @@ def total(product):
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
     pass
+
+
+show_products()
