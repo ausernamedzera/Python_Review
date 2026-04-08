@@ -1,13 +1,19 @@
 # empty dictionary
+from unittest import expectedFailure
+
 market = {
     "Fruit": "Price",
     "Strawberry": 13.4
 }
 
 #adding new products
-def add_product(product, value):
+def add_product(product, p_value):
     #value must be checked, value must be int
-    market[product] = value
+    if not p_value.isnumeric():
+        print("Please enter a valid integer")
+        return False
+    else:
+        market[product] = p_value
 
 #show the market's products
 def show_products():
@@ -31,3 +37,5 @@ def greeting():
 
 def main():
     pass
+
+add_product("Fruit", 123)
