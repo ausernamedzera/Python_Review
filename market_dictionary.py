@@ -1,5 +1,4 @@
 # empty dictionary
-from unittest import expectedFailure
 
 market = {
     "Fruit": "Price",
@@ -14,6 +13,7 @@ def add_product(product, p_value):
         return False
     else:
         market[product] = p_value
+        return True
 
 #show the market's products
 def show_products():
@@ -38,4 +38,4 @@ def greeting():
 def main():
     pass
 
-add_product("Fruit", 123)
+
