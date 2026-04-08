@@ -26,6 +26,11 @@ def show_products():
 
 #delete a product
 def delete_product(product):
+    #var mı yok mu?
+    #var
+        #sil, return true
+    #yok
+        #ürün yok return false
     pass
 
 #total
