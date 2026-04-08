@@ -7,7 +7,7 @@ market = {
 
 #adding new products
 def add_product(product, p_value):
-    #value must be checked, value must be float
+    #value must be checked, value must be "float"
     try:
         if not float(p_value):
             print("Please enter a valid price")
@@ -16,7 +16,7 @@ def add_product(product, p_value):
             market[product] = float(p_value)
             return True
     except ValueError:
-        print("Please enter a valid price")
+        print("Please enter a valid price, val err")
         return False
 
 #show the market's products
