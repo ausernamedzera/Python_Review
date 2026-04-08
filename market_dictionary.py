@@ -7,6 +7,7 @@ market = {
 
 #adding new products
 def add_product(product, value):
+    #value must be checked, value must be int
     market[product] = value
 
 #show the market's products
@@ -19,7 +20,7 @@ def delete_product(product):
     pass
 
 #total
-def total(product):
+def total():
     pass
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
