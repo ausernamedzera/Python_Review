@@ -35,6 +35,10 @@ def show_products():
     for key, value in market.items():
         print(f"{key:<{max_len+1}}| {value} TL")
 
+# find the product
+
+def check_product(product):
+    pass
 
 #delete a product
 def delete_product(product):
