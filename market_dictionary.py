@@ -21,8 +21,20 @@ def add_product(product, p_value):
 
 #show the market's products
 def show_products():
+    """
+    Uzun yol
+    #for key, value in market.items():
+     #   print(key, value) #daha estetik durması için ayarlama yap
+    max_key = ""
+    for key in market.keys():
+        if len(key) > len(max_key):
+            max_key = key #en uzun lenght i bul.
+    """
+    #kısa yoldan hizalama
+    max_len = len(max(market.keys(), key=len))
     for key, value in market.items():
-        print(key, value) #daha estetik durması için ayarlama yap
+        print(f"{key:<{max_len+1}}| {value} TL")
+
 
 #delete a product
 def delete_product(product):
@@ -50,3 +62,4 @@ def main():
 
 #add_product("Fruit", 13)
 add_product("Strawberry", "1.34")
+show_products()
