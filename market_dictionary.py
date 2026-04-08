@@ -4,7 +4,6 @@ market = {
     "Strawberry": 13.4
 }
 
-
 #adding new products
 def add_product(product, value):
     #value must be checked, value must be int
@@ -27,5 +26,8 @@ def total():
 def close_market():
     return False
 
+def greeting():
+    pass
 
-show_products()
+def main():
+    pass
