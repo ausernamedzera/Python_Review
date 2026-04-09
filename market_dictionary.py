@@ -123,6 +123,11 @@ def greeting():
         print("*"*41)
         return True
     elif answer == "4":
+        total()
+        while True:
+            if not yn():
+                return True
+
 
 
 
