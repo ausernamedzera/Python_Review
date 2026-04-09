@@ -1,8 +1,8 @@
 # empty dictionary
 
 market = {
-    "Fruit": "Price",
-    "Strawberry": 13.4
+    "Strawberry": 13.4,
+    "muz" : 43
 }
 
 #adding new products
@@ -55,7 +55,10 @@ def delete_product(product):
 
 #total
 def total():
-    pass
+    sum = 0
+    for value in market.values():
+        sum += float(value)
+    print(sum)
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
@@ -69,5 +72,7 @@ def main():
 
 
 #add_product("Fruit", 13)
-add_product("Strawberry", "1.34")
-show_products()
+#add_product("Strawberry", "1.34")
+#show_products()
+
+total()
