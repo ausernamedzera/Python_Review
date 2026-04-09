@@ -63,7 +63,9 @@ def total():
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
+    print("*" * 41)
     print("Thanks For Using Our Program")
+    print("*" * 41)
     return False
 
 def product_name_price():
@@ -127,6 +129,9 @@ def greeting():
         while True:
             if not yn():
                 return True
+    elif answer == "5":
+        close_market()
+
 
 
 
