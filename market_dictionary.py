@@ -46,12 +46,12 @@ def check_product(product):
 
 #delete a product
 def delete_product(product):
-    #var mı yok mu?
-    #var
-        #sil, return true
-    #yok
-        #ürün yok return false
-    pass
+    if check_product(product):
+        del market[product]  #del market, dersek bütün dictionaryi silmiş oluruz TAMAMEN
+        return True
+    else:
+        print(f"{product} is not in market. delete failed.")
+        return False
 
 #total
 def total():
