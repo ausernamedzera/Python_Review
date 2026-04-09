@@ -58,7 +58,7 @@ def total():
     total_products = 0
     for value in market.values():
         total_products += float(value)
-    print(total_products)
+    print(f"Total Price: {total_products:.2f} TL")
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
@@ -122,9 +122,6 @@ def greeting():
         return True
     elif answer == "4":
         total()
-        while True:
-            if not yn():
-                return True
     elif answer == "5":
         close_market()
     else:
