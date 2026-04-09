@@ -73,7 +73,7 @@ def product_name_price():
     return product_key, price_value
 
 def yn():
-    y_n = input("Do you wanna add products? Y/N: ").capitalize()
+    y_n = input("Do you wanna add products? Y/N: ").lower()
     if y_n == "y" or y_n == "yes":
         product_key, price_value = product_name_price()
         add_product(product_key, price_value)
