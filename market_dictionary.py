@@ -62,6 +62,7 @@ def total():
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
+    print("Thanks For Using Our Program")
     return False
 
 def greeting():
