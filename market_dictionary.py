@@ -116,7 +116,7 @@ def greeting():
     elif answer == "3":
         print("*"*41)
         show_products()
-        delete_selected= input("Select a product to delete: ").lower()
+        delete_selected= input("Select a product to delete: ").capitalize()
         print("*"*41)
         delete_product(delete_selected)
         print("*"*41)
