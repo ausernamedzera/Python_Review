@@ -38,7 +38,7 @@ def show_products():
 # find the product
 
 def check_product(product):
-    return product in market #Mantığı anla
+    return product in market #mantığını anla
 
 #delete a product
 def delete_product(product):
