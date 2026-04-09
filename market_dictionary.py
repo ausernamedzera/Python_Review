@@ -66,15 +66,33 @@ def close_market():
     return False
 
 def greeting():
-    print("*"*33)
+
+    print("*"*41)
     print("*GREETINGS, WELCOME TO MY MARKET CATALOG*")
-    print("*"*33)
+    print("*"*41)
 
     answer = input("1-Show Catalog\n"
                    "2-Add Product\n"
                    "4-Delete Product\n"
                    "5-All Products Total Price\n"
                    "6-Quit: ")
+    if answer == "1":
+        print("*"*41)
+        show_products()
+        print("*"*41)
+        while True:
+            y_n = input("Do you wanna add products? Y/N: ").lower()
+            if y_n == "y" or y_n == "yes":
+                product_key = input("Enter product name: ")
+                price_value = input("Enter product price: ")
+                add_product(product_key, price_value)
+            elif y_n == "n" or y_n == "no":
+                greeting()
+            else:
+                print("Please enter a valid option")
+                return False
+
+
 
 def main():
     while True:
