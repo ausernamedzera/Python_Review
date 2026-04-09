@@ -66,7 +66,15 @@ def close_market():
     return False
 
 def greeting():
-    pass
+    print("*"*33)
+    print("*GREETINGS, WELCOME TO MY MARKET CATALOG*")
+    print("*"*33)
+
+    answer = input("1-Show Catalog\n"
+                   "2-Add Product\n"
+                   "4-Delete Product\n"
+                   "5-All Products Total Price\n"
+                   "6-Quit: ")
 
 def main():
     while True:
@@ -76,8 +84,4 @@ def main():
             return False
 
 
-#add_product("Fruit", 13)
-#add_product("Strawberry", "1.34")
-#show_products()
-
-total()
+main()
