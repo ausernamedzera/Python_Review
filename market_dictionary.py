@@ -2,7 +2,7 @@
 
 market = {
     "Strawberry": 13.4,
-    "muz" : 43
+    "Muz" : 43
 }
 
 #adding new products
@@ -69,12 +69,12 @@ def close_market():
     return False
 
 def product_name_price():
-    product_key = input("Enter product name: ")
+    product_key = input("Enter product name: ").capitalize()
     price_value = input("Enter product price: ")
     return product_key, price_value
 
 def yn():
-    y_n = input("Do you wanna add products? Y/N: ").lower()
+    y_n = input("Do you wanna add products? Y/N: ").capitalize()
     if y_n == "y" or y_n == "yes":
         product_key, price_value = product_name_price()
         add_product(product_key, price_value)
@@ -136,16 +136,10 @@ def greeting():
         print("Please enter a valid option\n")
         return True
 
-
-
-
-
-
-
 def main():
     while True:
         if not greeting():
             return False
 
-
-main()
+if __name__ == "__main__":
+    main()
