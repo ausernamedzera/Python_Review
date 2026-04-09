@@ -38,12 +38,7 @@ def show_products():
 # find the product
 
 def check_product(product):
-    while True:
-        for p in market.keys():
-            if p == product:
-                return True
-        else:
-            return False
+    return product in market #Mantığı anla
 
 #delete a product
 def delete_product(product):
