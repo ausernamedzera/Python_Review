@@ -90,9 +90,9 @@ def greeting():
 
     answer = input("1-Show Catalog\n"
                    "2-Add Product\n"
-                   "4-Delete Product\n"
-                   "5-All Products Total Price\n"
-                   "6-Quit: ")
+                   "3-Delete Product\n"
+                   "4-All Products Total Price\n"
+                   "5-Quit: ")
     if answer == "1":
         print("*"*41)
         show_products()
@@ -117,7 +117,12 @@ def greeting():
         delete_selected= input("Select a product to delete: ").lower()
         print("*"*41)
         delete_product(delete_selected)
+        print("*"*41)
+        print("Catalog Updated")
+        show_products()
+        print("*"*41)
         return True
+    elif answer == "4":
 
 
 
