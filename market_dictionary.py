@@ -70,6 +70,18 @@ def product_name_price():
     price_value = input("Enter product price: ")
     return product_key, price_value
 
+def yn():
+    y_n = input("Do you wanna add products? Y/N: ").lower()
+    if y_n == "y" or y_n == "yes":
+        product_key, price_value = product_name_price()
+        add_product(product_key, price_value)
+        return True
+    elif y_n == "n" or y_n == "no":
+        return False
+    else:
+        print("Please enter a valid option")
+        return True
+
 def greeting():
     print("*"*41)
     print("*GREETINGS, WELCOME TO MY MARKET CATALOG*")
@@ -85,15 +97,8 @@ def greeting():
         show_products()
         print("*"*41)
         while True:
-            y_n = input("Do you wanna add products? Y/N: ").lower()
-            if y_n == "y" or y_n == "yes":
-                product_key, price_value = product_name_price()
-                add_product(product_key, price_value)
-            elif y_n == "n" or y_n == "no":
+            if not yn():
                 return True
-            else:
-                print("Please enter a valid option")
-                print("*"*41)
     elif answer == "2":
         print("*"*41)
         product_key, product_value = product_name_price()
@@ -102,7 +107,10 @@ def greeting():
         print("NEW CATALOG")
         show_products()
         print("*"*41)
-        y_n = input("Do you wanna add products? Y/N: ").lower()
+        while True:
+            if not yn():
+                return True
+
 
 
 
