@@ -44,6 +44,10 @@ def check_product(product):
 def delete_product(product):
     if check_product(product):
         del market[product]  #del market, dersek bütün dictionaryi silmiş oluruz TAMAMEN
+        print("*" * 41)
+        print("Catalog Updated")
+        show_products()
+        print("*" * 41)
         return True
     else:
         print(f"{product} is not in market. delete failed.")
@@ -114,10 +118,7 @@ def greeting():
         delete_selected= input("Select a product to delete: ").capitalize()
         print("*"*41)
         delete_product(delete_selected)
-        print("*"*41)
-        print("Catalog Updated")
-        show_products()
-        print("*"*41)
+
         return True
     elif answer == "4":
         total()
