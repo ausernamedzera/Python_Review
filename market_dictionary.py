@@ -69,7 +69,11 @@ def greeting():
     pass
 
 def main():
-    pass
+    while True:
+        if greeting():
+            return True
+        else:
+            return False
 
 
 #add_product("Fruit", 13)
