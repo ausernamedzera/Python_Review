@@ -131,7 +131,6 @@ def greeting():
                 return True
     elif answer == "5":
         close_market()
-
     else:
         print("Please enter a valid option\n")
         return True
