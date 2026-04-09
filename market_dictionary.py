@@ -110,6 +110,13 @@ def greeting():
         while True:
             if not yn():
                 return True
+    elif answer == "3":
+        print("*"*41)
+        show_products()
+        delete_selected= input("Select a product to delete: ").lower()
+        print("*"*41)
+        delete_product(delete_selected)
+        return True
 
 
 
