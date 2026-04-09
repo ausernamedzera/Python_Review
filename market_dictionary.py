@@ -51,10 +51,10 @@ def delete_product(product):
 
 #total
 def total():
-    sum = 0
+    total_products = 0
     for value in market.values():
-        sum += float(value)
-    print(sum)
+        total_products += float(value)
+    print(total_products)
 
 #quit belki bunu fonksiyon olarak yazmam henüz bilmiyorum
 def close_market():
