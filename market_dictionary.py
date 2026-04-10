@@ -70,7 +70,7 @@ def close_market():
 def product_name_price():
     product_key = input("Enter product name: ").capitalize()
     price_value = input("Enter product price: ")
-    return product_key, price_value
+    return product_key, price_value #BU IFADE TUPLE YANİ DEĞİŞTİRİLEMEZ LİSTE OLARAK GERİYE DÖNER.
 
 def yn():
     y_n = input("Do you wanna add products? Y/N: ").lower()
