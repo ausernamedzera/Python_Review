@@ -1,7 +1,11 @@
+from os import name
+
+
 class Student: #our own data type
     #classes has methods.
-    def __init__(self):
-
+    def __init__(self, name, house): #initilation
+        self.name = name
+        self.house = house
 
 
 def main():
@@ -23,7 +27,7 @@ def get_student():
     """
     name =  input("Name: ")
     house = input("House: ")
-    student = Student(name, house)
+    student = Student(name, house) #we are construct a student object in here
     return student
 
 
