@@ -1,5 +1,7 @@
 class Student: #our own data type
-    ...
+    #classes has methods.
+    def __init__(self):
+
 
 
 def main():
