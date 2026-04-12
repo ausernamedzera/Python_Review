@@ -14,10 +14,14 @@ def get_student():
     name = input("Name: ")
     house = input("House: ")
     return {"name": name, "house": house} #zaten dictionary döndüreceği için, return değeri dictionary olacak
-"""
-    student = Student() #classes have their "Attributes" #this is a object
+
+    student = Student() #classes have their "Attributes" #this is an object
     student.name = input("Name: ")
     student.house = input("House: ")
+    """
+    name =  input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
     return student
 
 
