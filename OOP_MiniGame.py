@@ -17,8 +17,7 @@ def get_character():
     name = input("Enter your hero name: ")
     health = 100 #I want them to automatically set a default.
     attack_power = 25
-    hero = Character(name, health, attack_power)
-    return hero
+    return Character(name, health, attack_power)
 
 hero = get_character()
 hero.introduce()
