@@ -12,3 +12,13 @@ class Character:
 
     def is_alive(self):
         return self.health > 0
+
+def get_character():
+    name = input("Enter your hero name: ")
+    health = 100 #I want them to automatically set a default.
+    attack_power = 25
+    hero = Character(name, health, attack_power)
+    return hero
+
+hero = get_character()
+hero.introduce()
