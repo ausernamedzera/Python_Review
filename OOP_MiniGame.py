@@ -14,7 +14,10 @@ class Character:
         return self.health > 0
 
 class Warrior(Character): #inherited
-    pass
+
+    def __init__(self, w_name, w_health, w_attack_power, armor):
+        Character.__init__(self, w_name, w_health, w_attack_power)
+        self.armor = armor
 
 class Mage(Character):
     pass
