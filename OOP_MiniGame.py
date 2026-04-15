@@ -16,6 +16,8 @@ class Character:
 class Warrior(Character): #inherited
     pass
 
+class Mage(Character):
+    pass
 
 def get_character():
     name = input("Enter your hero name: ")
