@@ -35,3 +35,4 @@ def get_character():
 
 hero = get_character()
 hero.introduce()
+
