@@ -13,11 +13,13 @@ class Character:
     def is_alive(self):
         return self.health > 0
 
+class Warrior(Character): #inherited
+    pass
+
+
 def get_character():
     name = input("Enter your hero name: ")
     health = 100 #I want them to automatically set a default.
     attack_power = 25
     return Character(name, health, attack_power)
 
-hero = get_character()
-hero.introduce()
