@@ -16,7 +16,8 @@ class Character:
 class Warrior(Character): #inherited
 
     def __init__(self, w_name, w_health, w_attack_power, armor):
-        Character.__init__(self, w_name, w_health, w_attack_power)
+        super().__init__(w_name, w_health, w_attack_power) #no need to use parent's direct name
+        #Character.__init__(self, w_name, w_health, w_attack_power)
         self.armor = armor
 
 class Mage(Character):
