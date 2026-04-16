@@ -29,6 +29,8 @@ class Mage(Character):
         super().__init__(name, health,attack_power)
         self.mana = mana
 
+    def introduce(self):
+        print(f"Hello {self.name}, your current health is {self.health}. and your attack power is {self.mana}")
 
 
     def take_damage(self, damage):
