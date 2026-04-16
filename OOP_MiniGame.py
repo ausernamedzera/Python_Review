@@ -25,7 +25,7 @@ class Warrior(Character): #inherited
 
 class Mage(Character):
 
-    def __init__(self, mana, name, health, attack_power):
+    def __init__(self, name, health, attack_power, mana):
         super().__init__(name, health,attack_power)
         self.mana = mana
 
