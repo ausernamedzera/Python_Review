@@ -12,6 +12,8 @@ class Character:
 
     def is_alive(self):
         return self.health > 0
+    def attack(self):
+        return self.a_power
 
 class Warrior(Character): #inherited
 
@@ -26,23 +28,36 @@ class Warrior(Character): #inherited
 class Mage(Character):
 
     def __init__(self, name, health, attack_power, mana):
-        super().__init__(name, health,attack_power)
+        super().__init__(name, health, attack_power)
         self.mana = mana
 
     def introduce(self):
-        print(f"Hello {self.name}, your current health is {self.health}. and your attack power is {self.mana}")
-
+        print(f"Hello {self.name}, my current health is {self.health}. and my attack power is {self.mana} I'll beat you!")
 
     def take_damage(self, damage):
-        self.healt -= damage
+        self.health -= damage
+
+    def attack(self):
+        return self.mana * 0.5
 
 def get_character():
     name = input("Enter your hero name: ")
     health = 100 #I want them to automatically set a default.
     attack_power = 25
-    armor = 200
-    return Warrior(name, health, attack_power, armor)
+    mana = 200
+    return Character(name, health, attack_power)
 
 hero = get_character()
+mage = Mage("Magist", 80, 0, 200)
+
 hero.introduce()
+mage.introduce()
+
+hero.take_damage(30)
+mage.take_damage(30)
+
+print(hero.is_alive())
+print(mage.is_alive())
+print(hero.health)
+print(mage.health)
 
