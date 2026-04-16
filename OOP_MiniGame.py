@@ -24,7 +24,15 @@ class Warrior(Character): #inherited
         print(f"hello I am a warrior! my name is {self.name}, my health {self.health}, my attack power {self.a_power} and my  armor def {self.armor}")
 
 class Mage(Character):
-    pass
+
+    def __init__(self, mana, name, health, attack_power):
+        super().__init__(name, health,attack_power)
+        self.mana = mana
+
+
+
+    def take_damage(self, damage):
+        self.mana -= damage
 
 def get_character():
     name = input("Enter your hero name: ")
