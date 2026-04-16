@@ -34,7 +34,7 @@ class Mage(Character):
 
 
     def take_damage(self, damage):
-        self.mana -= damage
+        self.healt -= damage
 
 def get_character():
     name = input("Enter your hero name: ")
