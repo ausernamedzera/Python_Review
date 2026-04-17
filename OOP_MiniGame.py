@@ -47,6 +47,22 @@ def get_character():
     mana = 200
     return Character(name, health, attack_power)
 
+
+#mage(villain)
+#it will have same structure with hero, but not with choices, it is gonna get a random upgrade level to level
+
+#hero
+
+#hero will have multiple choices. those choices are gonna make the hero grows over game play.
+#every restart will have new choice
+
+#recods may store in a csv file 1-New Game / 2-Resume
+
+#Game play
+#a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
+#but if the item is about mana, hero cannot gain any power.
+#the game will over when user wants finish the game or the user's health drop to zero
+
 hero = get_character()
 mage = Mage("Magist", 80, 0, 200)
 
