@@ -44,16 +44,17 @@ def get_character():
     name = input("Enter your hero name: ")
     health = 100 #I want them to automatically set a default.
     attack_power = 25
-    mana = 200
-    return Character(name, health, attack_power)
+    armor = 200
+    return Warrior(name, health, attack_power, armor)
 
 
 #mage(villain)
 #it will have same structure with hero, but not with choices, it is gonna get a random upgrade level to level
 
 #hero
-def hero_game():
+def hero_game(name, attack_power, health, armor):
     pass
+
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
 #every restart will have new choice
@@ -65,6 +66,20 @@ def hero_game():
 #but if the item is about mana, hero cannot gain any power.
 #the game will over when user wants finish the game or the user's health drop to zero
 
+
+
+def main():
+    while True:
+        #note: h represents hero
+        h = get_character()
+        h.introduce()
+        hero_game(h.name, h.a_power, h.health, h.armor)
+
+if __name__ == "__main__":
+    main()
+
+
+"""""
 hero = get_character()
 mage = Mage("Magist", 80, 0, 200)
 
@@ -79,3 +94,4 @@ print(mage.is_alive())
 print(hero.health)
 print(mage.health)
 
+"""
