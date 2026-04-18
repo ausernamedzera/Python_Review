@@ -52,6 +52,8 @@ def get_character():
 #it will have same structure with hero, but not with choices, it is gonna get a random upgrade level to level
 
 #hero
+def hero_game():
+    pass
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
 #every restart will have new choice
