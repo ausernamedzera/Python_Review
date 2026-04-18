@@ -25,6 +25,10 @@ class Warrior(Character): #inherited
     def introduce(self):
         print(f"hello I am a warrior! my name is {self.name}, my health {self.health}, my attack power {self.a_power} and my  armor def {self.armor}")
 
+    def take_damage(self, damage):
+        self.health -= damage
+        self.armor -= damage
+
 class Mage(Character):
 
     def __init__(self, name, health, attack_power, mana):
@@ -57,9 +61,14 @@ def hero_game(name, attack_power, health, armor):
 
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
-#every restart will have new choice
+def hero_level():
+    pass
 
-#recods may store in a csv file 1-New Game / 2-Resume
+#every restart will have new choice
+def next_level():
+    pass
+
+#recods may store in a csv file 1-New Game / 2-Resume ???
 
 #Game play
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
