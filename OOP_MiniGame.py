@@ -71,10 +71,15 @@ def get_mage(level):
         mana = 1000
         attack_p = mana*0.05
         return Mage(mage_3, health, attack_p, mana)
-
-
-    mage_3 = ""
-    mage_4 = ""
+    elif level == "hard":
+        mage_4 = "Elowen"
+        health = 10000
+        mana = 2000
+        attack_p = mana*0.1
+        return Mage(mage_4, health,attack_p, mana)
+    else:
+        print("Invalid level")
+        return False
 
 
 #mage(villain)
