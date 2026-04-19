@@ -51,6 +51,19 @@ def get_character():
     armor = 200
     return Warrior(name, health, attack_power, armor)
 
+def get_mage(level):
+    #mage one
+    if level == "easy":
+        mage_1 = "Aldric"
+        health = 100
+        mana = 500
+        attack_p= mana*0.05
+        return Mage(mage_1, health, attack_p, mana)
+
+    mage_2 = ""
+    mage_3 = ""
+    mage_4 = ""
+
 
 #mage(villain)
 #it will have same structure with hero, but not with choices, it is gonna get a random upgrade level to level
