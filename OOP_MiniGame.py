@@ -65,8 +65,14 @@ def get_mage(level):
         mana = 800
         attack_p = mana*0.05
         return Mage(mage_2, health, attack_p, mana)
+    elif level == "medium-hard":
+        mage_3 = "Malachar"
+        health = 1500
+        mana = 1000
+        attack_p = mana*0.05
+        return Mage(mage_3, health, attack_p, mana)
 
-    mage_2 = ""
+
     mage_3 = ""
     mage_4 = ""
 
