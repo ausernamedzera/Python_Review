@@ -107,8 +107,20 @@ def game_play():
     # note: h represents hero
     h = get_character()
     h.introduce()
-    get_level(level)
+    if get_level(level) == "easy"
 
+
+def get_level(level):
+    if level == 0:
+        return "easy"
+    elif level == 1:
+        return "medium"
+    elif level == 2:
+        return "medium-hard"
+    elif level == 3:
+        return "hard"
+    else:
+        return False
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
 #but if the item is about mana, hero cannot gain any power.
 #the game will over when user wants finish the game or the user's health drop to zero
