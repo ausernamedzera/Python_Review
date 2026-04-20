@@ -107,7 +107,10 @@ def game_play():
     # note: h represents hero
     h = get_character()
     h.introduce()
-    if get_level(level) == "easy"
+    if get_level(level) == "easy":
+        mage = get_mage(get_level(level))
+        mage.introduce()
+        print("FIGHT BEGUN!")
 
 
 def get_level(level):
