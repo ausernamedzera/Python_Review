@@ -101,6 +101,14 @@ def next_level():
 #recods may store in a csv file 1-New Game / 2-Resume ???
 
 #Game play
+
+def game_play():
+    level = 0
+    # note: h represents hero
+    h = get_character()
+    h.introduce()
+    get_level(level)
+
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
 #but if the item is about mana, hero cannot gain any power.
 #the game will over when user wants finish the game or the user's health drop to zero
@@ -109,10 +117,7 @@ def next_level():
 
 def main():
     while True:
-        #note: h represents hero
-        h = get_character()
-        h.introduce()
-        hero_game(h.name, h.a_power, h.health, h.armor)
+        pass
 
 if __name__ == "__main__":
     main()
