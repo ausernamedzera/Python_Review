@@ -109,7 +109,12 @@ def next_level():
 
 #recods may store in a csv file 1-New Game / 2-Resume ???
 
-
+def true_false():
+    a = random.randrange(0,1)
+    if a == 0:
+        return True
+    else:
+        return False
 
 #Game play
 
