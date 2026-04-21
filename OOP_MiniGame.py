@@ -130,6 +130,7 @@ def game_play(level):
             print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
             attack = int(input(" "))
             h.attack_enemy(attack)
+            mage.take_damage(h.attack_enemy(attack))
             print("mage lost health!")
             print(mage.health)
 
