@@ -1,3 +1,5 @@
+import random
+
 class Character:
     def __init__(self, name, health, attack_power):
         self.name = name
@@ -28,6 +30,13 @@ class Warrior(Character): #inherited
     def take_damage(self, damage):
         self.health -= damage
         self.armor -= damage
+
+    def attack_enemy(self, damage):
+        if self.a_power < self.armor:
+            print("enchanted attack!")
+            self.health -= damage
+            return self.a_power * 0.5
+        return self.a_power * 0.5
 
 class Mage(Character):
 
@@ -100,10 +109,11 @@ def next_level():
 
 #recods may store in a csv file 1-New Game / 2-Resume ???
 
+
+
 #Game play
 
-def game_play():
-    level = 0
+def game_play(level):
     # note: h represents hero
     h = get_character()
     h.introduce()
@@ -111,6 +121,11 @@ def game_play():
         mage = get_mage(get_level(level))
         mage.introduce()
         print("FIGHT BEGUN!")
+        if true_false():
+            print("HERO ATTACK!")
+            attack = input(f"Attack power is {h.attack()}! Every power you over, you will lose your health!: attack wisely!")
+
+
 
 
 def get_level(level):
@@ -132,7 +147,8 @@ def get_level(level):
 
 def main():
     while True:
-        pass
+        level = 0
+        game_play(level)
 
 if __name__ == "__main__":
     main()
