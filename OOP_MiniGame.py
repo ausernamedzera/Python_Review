@@ -56,9 +56,9 @@ class Mage(Character):
 def get_character():
     name = input("Enter your hero name: ")
     health = 100 #I want them to automatically set a default.
-    attack_power = 25
+    a_power = 25
     armor = 200
-    return Warrior(name, health, attack_power, armor)
+    return Warrior(name, health, a_power, armor)
 
 def get_mage(level):
     #mage one
@@ -127,9 +127,11 @@ def game_play(level):
         mage.introduce()
         print("FIGHT BEGUN!")
         if true_false():
-            print("HERO ATTACK!")
-            attack = input(f"Attack power is {h.attack()}! Every power you over, you will lose your health!: attack wisely!")
-
+            print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
+            attack = int(input(" "))
+            h.attack_enemy(attack)
+            print("mage lost health!")
+            print(mage.health)
 
 
 
