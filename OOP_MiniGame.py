@@ -151,7 +151,11 @@ def game_play(level):
                 print(f"***********************************************************************\n"
                       f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
                       f"***********************************************************************")
-
+    print("Game Over")
+    if h.is_alive():
+        print("winner is hero")
+    else:
+        print("winner is mage")
 
 def get_level(level):
     if level == 0:
