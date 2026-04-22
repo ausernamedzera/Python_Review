@@ -110,7 +110,7 @@ def next_level():
 #recods may store in a csv file 1-New Game / 2-Resume ???
 
 def true_false():
-    a = random.randrange(0,1)
+    a = random.randrange(0,2)
     if a == 0:
         return True
     else:
@@ -126,13 +126,30 @@ def game_play(level):
         mage = get_mage(get_level(level))
         mage.introduce()
         print("FIGHT BEGUN!")
-        if true_false():
-            print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
-            attack = int(input(" "))
-            h.attack_enemy(attack)
-            mage.take_damage(h.attack_enemy(attack))
-            print("mage lost health!")
-            print(mage.health)
+        while h.is_alive() or mage.is_alive():
+            if true_false():
+                print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
+                attack = int(input(" "))
+                h.attack_enemy(attack)
+                mage.take_damage(h.attack_enemy(attack))
+                print("mage lost health!")
+                print(mage.health)
+                mage.attack()
+                print(f"mage {mage.name} attacked successfully! Poor hero :'(")
+                print(f"***********************************************************************"
+                      f"hero's current health: {h.health}\nMage's current health: {mage.health}"
+                      f"***********************************************************************")
+            else:
+                print(f"MAGE ATTACK! MANA POWER LOADING")
+                mage.attack()
+                print("Hero lost health!")
+                print(h.health)
+                print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
+                attack =int(input(" "))
+                print("mage lost health!")
+                print(f"***********************************************************************"
+                      f"hero's current health: {h.health}\nMage's current health: {mage.health}"
+                      f"***********************************************************************")
 
 
 
