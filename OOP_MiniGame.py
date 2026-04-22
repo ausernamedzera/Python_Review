@@ -130,7 +130,6 @@ def game_play(level):
             while h.is_alive() or mage.is_alive():
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack = int(input(" "))
-                h.attack_enemy(attack)
                 mage.take_damage(h.attack_enemy(attack))
                 print("mage lost health!")
                 print(mage.health)
@@ -147,6 +146,7 @@ def game_play(level):
                 print(h.health)
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack =int(input(" "))
+                mage.take_damage(h.attack_enemy(attack))
                 print("mage lost health!")
                 print(f"***********************************************************************\n"
                       f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
