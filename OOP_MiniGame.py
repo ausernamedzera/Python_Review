@@ -126,8 +126,8 @@ def game_play(level):
         mage = get_mage(get_level(level))
         mage.introduce()
         print("FIGHT BEGUN!")
-        while h.is_alive() or mage.is_alive():
-            if true_false():
+        if true_false():
+            while h.is_alive() or mage.is_alive():
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack = int(input(" "))
                 h.attack_enemy(attack)
@@ -139,7 +139,8 @@ def game_play(level):
                 print(f"***********************************************************************"
                       f"hero's current health: {h.health}\nMage's current health: {mage.health}"
                       f"***********************************************************************")
-            else:
+        else:
+            while h.is_alive() or mage.is_alive():
                 print(f"MAGE ATTACK! MANA POWER LOADING")
                 mage.attack()
                 print("Hero lost health!")
@@ -147,10 +148,9 @@ def game_play(level):
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack =int(input(" "))
                 print("mage lost health!")
-                print(f"***********************************************************************"
-                      f"hero's current health: {h.health}\nMage's current health: {mage.health}"
+                print(f"***********************************************************************\n"
+                      f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
                       f"***********************************************************************")
-
 
 
 def get_level(level):
