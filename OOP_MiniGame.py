@@ -13,7 +13,10 @@ class Character:
         self.health -= damage
 
     def is_alive(self):
-        return self.health > 0
+        if self.health > 0:
+            return True
+        else:
+            return False
     def attack(self):
         return self.a_power
 
@@ -110,14 +113,13 @@ def next_level():
 #recods may store in a csv file 1-New Game / 2-Resume ???
 
 def true_false():
-    a = random.randrange(0,2)
+    a = random.randrange(0,1)
     if a == 0:
         return True
     else:
         return False
 
 #Game play
-
 def game_play(level):
     # note: h represents hero
     h = get_character()
@@ -128,17 +130,21 @@ def game_play(level):
         t_f =  true_false()
         print("FIGHT BEGUN!")
         if t_f:
-            while h.is_alive() or mage.is_alive():
+            while True:
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack = int(input(" "))
                 mage.take_damage(h.attack_enemy(attack))
+                print("*"*51)
                 print("mage lost health!")
-                print(mage.health)
+                if not mage.is_alive():
+                    return False
                 mage.attack()
                 print(f"mage {mage.name} attacked successfully! Poor hero :'(")
-                print(f"***********************************************************************"
-                      f"hero's current health: {h.health}\nMage's current health: {mage.health}"
-                      f"***********************************************************************")
+                if not h.is_alive():
+                    return False
+                print(f"************************************************************************\n"
+                      f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
+                      f"***********************************************************************\n")
         else:
             while h.is_alive() or mage.is_alive():
                 print(f"MAGE ATTACK! MANA POWER LOADING")
