@@ -125,8 +125,9 @@ def game_play(level):
     if get_level(level) == "easy":
         mage = get_mage(get_level(level))
         mage.introduce()
+        t_f =  true_false()
         print("FIGHT BEGUN!")
-        if true_false():
+        if t_f:
             while h.is_alive() or mage.is_alive():
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack = int(input(" "))
