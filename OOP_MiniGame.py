@@ -137,11 +137,11 @@ def game_play(level):
                 print("*"*51)
                 print("mage lost health!")
                 if not mage.is_alive():
-                    return False
+                    break
                 mage.attack()
                 print(f"mage {mage.name} attacked successfully! Poor hero :'(")
                 if not h.is_alive():
-                    return False
+                    break
                 print(f"************************************************************************\n"
                       f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
                       f"***********************************************************************\n")
