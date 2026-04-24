@@ -170,6 +170,12 @@ def game_play(level):
             return False
     else:
         print("winner is mage")
+        answer = input("wanna try again (y/n): ")
+        if answer == "y":
+            return True
+        else:
+            print("Thanks for playing")
+            return False
 
 def get_level(level):
     if level == 0:
