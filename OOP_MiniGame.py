@@ -161,6 +161,13 @@ def game_play(level):
     print("Game Over")
     if h.is_alive():
         print("winner is hero")
+        answer = input("Next level? (y/n): ")
+        if answer == "y":
+            level += 1
+            return True
+        else:
+            print("Thanks for playing")
+            return False
     else:
         print("winner is mage")
 
