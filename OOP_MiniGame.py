@@ -54,7 +54,7 @@ class Mage(Character):
         self.health -= damage
 
     def attack(self, attack):
-        attack = self.mana * 0.5
+        attack = self.mana * 0.05
         return attack
 
 def get_character():
@@ -146,7 +146,8 @@ def game_play(level):
                 health_show(h.health, mage.health)
                 if not mage.is_alive():
                     break
-                mage.attack(mage.a_power)
+                # attack = mage.attack(mage.a_power)
+                h.take_damage(mage.attack(mage.a_power))
                 print(f"mage {mage.name} attacked successfully! Poor hero :'(")
                 if not h.is_alive():
                     break
