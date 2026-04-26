@@ -119,6 +119,12 @@ def true_false():
     else:
         return False
 
+
+def health_show(hero_health, mage_health):
+    print(f"************************************************************************\n"
+          f"hero's current health: {hero_health}\nMage's current health: {mage_health}\n"
+          f"***********************************************************************\n")
+
 #Game play
 def game_play(level):
     # note: h represents hero
@@ -142,22 +148,20 @@ def game_play(level):
                 print(f"mage {mage.name} attacked successfully! Poor hero :'(")
                 if not h.is_alive():
                     break
-                print(f"************************************************************************\n"
-                      f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
-                      f"***********************************************************************\n")
+                health_show(h.health, mage.health)
         else:
             while h.is_alive() or mage.is_alive():
                 print(f"MAGE ATTACK! MANA POWER LOADING")
                 mage.attack()
                 print("Hero lost health!")
+                health_show(h.health, mage.health)
                 print(h.health)
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack =int(input(" "))
                 mage.take_damage(h.attack_enemy(attack))
                 print("mage lost health!")
-                print(f"***********************************************************************\n"
-                      f"hero's current health: {h.health}\nMage's current health: {mage.health}\n"
-                      f"***********************************************************************")
+                health_show(h.health, mage.health)
+
     print("Game Over")
     if h.is_alive():
         print("winner is hero")
