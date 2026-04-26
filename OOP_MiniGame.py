@@ -142,6 +142,7 @@ def game_play(level):
                 mage.take_damage(h.attack_enemy(attack))
                 print("*"*51)
                 print("mage lost health!")
+                health_show(h.health, mage.health)
                 if not mage.is_alive():
                     break
                 mage.attack()
