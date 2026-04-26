@@ -34,12 +34,12 @@ class Warrior(Character): #inherited
         self.health -= damage
         self.armor -= damage
 
-    def attack_enemy(self, damage):
-        if self.a_power < self.armor:
+    def attack_enemy(self, attack):
+        if attack > self.a_power:
             print("enchanted attack!")
-            self.health -= damage
-            return self.a_power * 0.5
-        return self.a_power * 0.5
+            self.health = self.health - (attack - self.a_power)
+            return attack * 0.5
+        return attack * 0.5
 
 class Mage(Character):
 
