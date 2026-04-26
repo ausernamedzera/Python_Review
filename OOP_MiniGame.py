@@ -17,7 +17,7 @@ class Character:
             return True
         else:
             return False
-    def attack(self):
+    def attack(self, attack):
         return self.a_power
 
 class Warrior(Character): #inherited
@@ -34,7 +34,7 @@ class Warrior(Character): #inherited
         self.health -= damage
         self.armor -= damage
 
-    def attack_enemy(self, attack):
+    def attack(self, attack):
         if attack > self.a_power:
             print("enchanted attack!")
             self.health = self.health - (attack - self.a_power)
@@ -53,8 +53,9 @@ class Mage(Character):
     def take_damage(self, damage):
         self.health -= damage
 
-    def attack(self):
-        return self.mana * 0.5
+    def attack(self, attack):
+        attack = self.mana * 0.5
+        return attack
 
 def get_character():
     name = input("Enter your hero name: ")
@@ -139,13 +140,13 @@ def game_play(level):
             while True:
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack = int(input(" "))
-                mage.take_damage(h.attack_enemy(attack))
+                mage.take_damage(h.attack(attack))
                 print("*"*51)
                 print("mage lost health!")
                 health_show(h.health, mage.health)
                 if not mage.is_alive():
                     break
-                mage.attack()
+                mage.attack(mage.a_power)
                 print(f"mage {mage.name} attacked successfully! Poor hero :'(")
                 if not h.is_alive():
                     break
@@ -153,13 +154,13 @@ def game_play(level):
         else:
             while h.is_alive() or mage.is_alive():
                 print(f"MAGE ATTACK! MANA POWER LOADING")
-                mage.attack()
+                mage.attack(mage.a_power)
                 print("Hero lost health!")
                 health_show(h.health, mage.health)
                 print(h.health)
                 print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
                 attack =int(input(" "))
-                mage.take_damage(h.attack_enemy(attack))
+                mage.take_damage(h.attack(attack))
                 print("mage lost health!")
                 health_show(h.health, mage.health)
 
