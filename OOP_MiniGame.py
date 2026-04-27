@@ -149,9 +149,10 @@ def game_play(level):
                 # attack = mage.attack(mage.a_power)
                 h.take_damage(mage.attack(mage.a_power))
                 print(f"mage {mage.name} attacked successfully! Poor hero :'(")
+                health_show(h.health, mage.health)
                 if not h.is_alive():
                     break
-                health_show(h.health, mage.health)
+
         else:
             while h.is_alive() or mage.is_alive():
                 print(f"MAGE ATTACK! MANA POWER LOADING")
