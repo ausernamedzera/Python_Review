@@ -138,8 +138,10 @@ def hero_game(h, level):
 
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
-def hero_level():
-    pass
+def hero_level(h, level):
+    if level == "medium":
+        h.health = 500
+        h.a_power = 1000
 
 #every restart will have new choice
 def next_level():
@@ -167,7 +169,13 @@ def game_play(level):
     h.introduce()
     if get_level(level) == "easy":
         hero_game(h, level)
-
+    elif get_level(level) == "medium":
+        #hero should get a level up
+        hero_level(h, level)
+        print(h.health, h.a_power)
+        hero_game(h, level)
+    elif get_level(level) == "medium-hard":
+        hero_game(h, level)
     print("Game Over")
     if h.is_alive():
         print("winner is hero")
