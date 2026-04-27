@@ -99,8 +99,42 @@ def get_mage(level):
 #it will have same structure with hero, but not with choices, it is gonna get a random upgrade level to level
 
 #hero
-def hero_game(name, attack_power, health, armor):
-    pass
+def hero_game(h, level):
+    mage = get_mage(get_level(level))
+    mage.introduce()
+    t_f = true_false()
+    print("FIGHT BEGUN!")
+    if t_f:
+        while True:
+            print(
+                f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
+            attack = int(input(" "))
+            mage.take_damage(h.attack(attack))
+            print("*" * 51)
+            print("mage lost health!")
+            health_show(h.health, mage.health)
+            if not mage.is_alive():
+                break
+            # attack = mage.attack(mage.a_power)
+            h.take_damage(mage.attack(mage.a_power))
+            print(f"mage {mage.name} attacked successfully! Poor hero :'(")
+            health_show(h.health, mage.health)
+            if not h.is_alive():
+                break
+
+    else:
+        while h.is_alive() or mage.is_alive():
+            print(f"MAGE ATTACK! MANA POWER LOADING")
+            mage.attack(mage.a_power)
+            print("Hero lost health!")
+            health_show(h.health, mage.health)
+            print(h.health)
+            print(
+                f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
+            attack = int(input(" "))
+            mage.take_damage(h.attack(attack))
+            print("mage lost health!")
+            health_show(h.health, mage.health)
 
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
@@ -132,39 +166,7 @@ def game_play(level):
     h = get_character()
     h.introduce()
     if get_level(level) == "easy":
-        mage = get_mage(get_level(level))
-        mage.introduce()
-        t_f =  true_false()
-        print("FIGHT BEGUN!")
-        if t_f:
-            while True:
-                print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
-                attack = int(input(" "))
-                mage.take_damage(h.attack(attack))
-                print("*"*51)
-                print("mage lost health!")
-                health_show(h.health, mage.health)
-                if not mage.is_alive():
-                    break
-                # attack = mage.attack(mage.a_power)
-                h.take_damage(mage.attack(mage.a_power))
-                print(f"mage {mage.name} attacked successfully! Poor hero :'(")
-                health_show(h.health, mage.health)
-                if not h.is_alive():
-                    break
-
-        else:
-            while h.is_alive() or mage.is_alive():
-                print(f"MAGE ATTACK! MANA POWER LOADING")
-                mage.attack(mage.a_power)
-                print("Hero lost health!")
-                health_show(h.health, mage.health)
-                print(h.health)
-                print(f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
-                attack =int(input(" "))
-                mage.take_damage(h.attack(attack))
-                print("mage lost health!")
-                health_show(h.health, mage.health)
+        hero_game(h, level)
 
     print("Game Over")
     if h.is_alive():
