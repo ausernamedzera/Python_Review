@@ -142,6 +142,7 @@ def hero_level(h, level):
     if level == "medium":
         h.health = 500
         h.a_power = 1000
+        return Warrior(h.health, h.a_power)
 
 #every restart will have new choice
 def next_level():
@@ -163,15 +164,13 @@ def health_show(hero_health, mage_health):
           f"***********************************************************************\n")
 
 #Game play
-def game_play(level):
-    # note: h represents hero
-    h = get_character()
-    h.introduce()
+def game_play(h, level):
     if get_level(level) == "easy":
         hero_game(h, level)
     elif get_level(level) == "medium":
         #hero should get a level up
-        hero_level(h, level)
+        #Get hero yaparken return tuple olarak döndüğü için değiştrilemiyor
+        h.health, h.a_power = hero_level(h, level)
         print(h.health, h.a_power)
         hero_game(h, level)
     elif get_level(level) == "medium-hard":
@@ -181,7 +180,6 @@ def game_play(level):
         print("winner is hero")
         answer = input("Next level? (y/n): ")
         if answer == "y":
-            level += 1
             return True
         else:
             print("Thanks for playing")
@@ -213,9 +211,12 @@ def get_level(level):
 
 
 def main():
+    h = get_character()
+    h.introduce()
+    level = 0
     while True:
-        level = 0
-        game_play(level)
+        game_play(h,level)
+        level += 1
 
 if __name__ == "__main__":
     main()
