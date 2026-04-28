@@ -139,10 +139,12 @@ def hero_game(h, level):
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
 def hero_level(h, level):
-    if level == "medium":
-        h.health = 500
-        h.a_power = 1000
-        return Warrior(h.health, h.a_power)
+    if level == 1: #aynı amaca hizmet eden iki değişken tanımlarsan, yazdığın kodu tabii karıştırısın (:
+        name = h.name
+        health = 500
+        a_power = 1000
+        armor = h.armor
+        return Warrior(name, health, a_power, armor)
 
 #every restart will have new choice
 def next_level():
@@ -169,9 +171,8 @@ def game_play(h, level):
         hero_game(h, level)
     elif get_level(level) == "medium":
         #hero should get a level up
-        #Get hero yaparken return tuple olarak döndüğü için değiştrilemiyor
-        h.health, h.a_power = hero_level(h, level)
-        print(h.health, h.a_power)
+        h_mid = hero_level(h, level)
+        h_mid.introduce()
         hero_game(h, level)
     elif get_level(level) == "medium-hard":
         hero_game(h, level)
