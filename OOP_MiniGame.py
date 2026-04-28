@@ -145,6 +145,12 @@ def hero_level(h, level):
         a_power = 1000
         armor = h.armor
         return Warrior(name, health, a_power, armor)
+    elif level == 2:
+        name = h.name
+        health = 1000
+        a_power = 1500
+        armor = h.armor
+        return Warrior(name, health, a_power, armor)
 
 #every restart will have new choice
 def next_level():
