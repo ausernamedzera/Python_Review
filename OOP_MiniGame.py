@@ -151,6 +151,17 @@ def hero_level(h, level):
         a_power = 1500
         armor = h.armor
         return Warrior(name, health, a_power, armor)
+    elif level == 3:
+        name = h.name
+        health = 10000
+        a_power = 10000
+        armor = 10000
+        return Warrior(name, health, a_power, armor)
+    elif level == 4:
+        print("YOU WON THE GAME CONGRATS")
+    else:
+        print("over leveled up, you beat the all program")
+        return False
 
 #every restart will have new choice
 def next_level():
