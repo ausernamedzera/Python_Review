@@ -206,7 +206,7 @@ def game_play(h, level):
         print("winner is mage")
         answer = input("wanna try again (y/n): ")
         if answer == "y":
-            return True
+            return "mage"
         else:
             print("Thanks for playing")
             return False
@@ -233,8 +233,10 @@ def main():
     h.introduce()
     level = 0
     while True:
-        game_play(h,level)
-        level += 1
+        if game_play(h,level) == "mage":
+            pass
+        else:
+            level += 1
 
 if __name__ == "__main__":
     main()
