@@ -184,15 +184,20 @@ def health_show(hero_health, mage_health):
 
 #Game play
 def game_play(h, level):
-    if get_level(level) == "easy":
+    if  level == 0:
         hero_game(h, level)
-    elif get_level(level) == "medium":
+    elif level == 1:
         #hero should get a level up
         h_mid = hero_level(h, level)
         h_mid.introduce()
         hero_game(h, level)
-    elif get_level(level) == "medium-hard":
+    elif level == 2:
         hero_game(h, level)
+    elif level == 3:
+        hero_game(h, level)
+    else:
+        print("Invalid level")
+        return False
     print("Game Over")
     if h.is_alive():
         print("winner is hero")
@@ -211,17 +216,6 @@ def game_play(h, level):
             print("Thanks for playing")
             return False
 
-def get_level(level):
-    if level == 0:
-        return "easy"
-    elif level == 1:
-        return "medium"
-    elif level == 2:
-        return "medium-hard"
-    elif level == 3:
-        return "hard"
-    else:
-        return False
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
 #but if the item is about mana, hero cannot gain any power.
 #the game will over when user wants finish the game or the user's health drop to zero
