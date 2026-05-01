@@ -66,25 +66,25 @@ def get_character():
 
 def get_mage(level):
     #mage one
-    if level == "easy":
+    if level == 0:
         mage_1 = "Aldric"
         health = 100
         mana = 500
         attack_p= mana*0.05
         return Mage(mage_1, health, attack_p, mana)
-    elif level == "medium":
+    elif level == 1:
         mage_2 = "Seraphon"
         health = 1000
         mana = 800
         attack_p = mana*0.05
         return Mage(mage_2, health, attack_p, mana)
-    elif level == "medium-hard":
+    elif level == 2:
         mage_3 = "Malachar"
         health = 1500
         mana = 1000
         attack_p = mana*0.05
         return Mage(mage_3, health, attack_p, mana)
-    elif level == "hard":
+    elif level == 3:
         mage_4 = "Elowen"
         health = 10000
         mana = 2000
