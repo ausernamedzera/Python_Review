@@ -100,7 +100,7 @@ def get_mage(level):
 
 #hero
 def hero_game(h, level):
-    mage = get_mage(get_level(level))
+    mage = get_mage(level)
     mage.introduce()
     t_f = true_false()
     print("FIGHT BEGUN!")
