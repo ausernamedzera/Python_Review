@@ -123,11 +123,14 @@ def hero_game(h, level):
                 break
 
     else:
-        while h.is_alive() or mage.is_alive():
+        while True:
             print(f"MAGE ATTACK! MANA POWER LOADING")
             mage.attack(mage.a_power)
+            print("*" * 51)
             print("Hero lost health!")
             health_show(h.health, mage.health)
+            if not h.is_alive():
+                break
             print(h.health)
             print(
                 f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
@@ -135,6 +138,8 @@ def hero_game(h, level):
             mage.take_damage(h.attack(attack))
             print("mage lost health!")
             health_show(h.health, mage.health)
+            if not mage.is_alive():
+                break
 
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
