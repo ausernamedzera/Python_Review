@@ -228,7 +228,7 @@ def main():
     level = 0
     while True:
         if game_play(h,level) == "mage":
-            pass
+            game_play(h, level)
         else:
             level += 1
 
