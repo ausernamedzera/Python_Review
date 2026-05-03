@@ -125,8 +125,8 @@ def hero_game(h, level):
     else:
         while True:
             print(f"MAGE ATTACK! MANA POWER LOADING")
-
-            h.take_damage(mage.attack(mage.a_power))
+            mage_attacked = mage.attack(mage.a_power)
+            h.take_damage(mage_attacked)
             print("*" * 51)
             print("Hero lost health!")
             health_show(h.health, mage.health)
@@ -145,25 +145,25 @@ def hero_game(h, level):
 
 #hero will have multiple choices. those choices are gonna make the hero grows over game play.
 def hero_level(h, level):
-    if level == 1: #aynı amaca hizmet eden iki değişken tanımlarsan, yazdığın kodu tabii karıştırısın (:
+    if level == 0: #aynı amaca hizmet eden iki değişken tanımlarsan, yazdığın kodu tabii karıştırısın (:
         name = h.name
         health = 500
         a_power = 1000
         armor = h.armor
         return Warrior(name, health, a_power, armor)
-    elif level == 2:
+    elif level == 1:
         name = h.name
         health = 1000
         a_power = 1500
         armor = h.armor
         return Warrior(name, health, a_power, armor)
-    elif level == 3:
+    elif level == 2:
         name = h.name
         health = 10000
         a_power = 10000
         armor = 10000
         return Warrior(name, health, a_power, armor)
-    elif level == 4:
+    elif level == 3:
         print("YOU WON THE GAME CONGRATS")
     else:
         print("over leveled up, you beat the all program")
@@ -234,8 +234,8 @@ def main():
     level = 0
     while True:
         if game_play(h,level) == "mage":
-            h = hero_level(h, level)
-            game_play(h, level)
+            h_repeat = hero_level(h, level)
+            game_play(h_repeat, level)
 
         else:
             level += 1
