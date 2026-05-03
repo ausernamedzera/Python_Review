@@ -147,13 +147,13 @@ def hero_game(h, level):
 def hero_level(h, level):
     if level == 0: #aynı amaca hizmet eden iki değişken tanımlarsan, yazdığın kodu tabii karıştırısın (:
         name = h.name
-        health = 500
+        health = 100
         a_power = 1000
         armor = h.armor
         return Warrior(name, health, a_power, armor)
     elif level == 1:
         name = h.name
-        health = 1000
+        health = 500
         a_power = 1500
         armor = h.armor
         return Warrior(name, health, a_power, armor)
