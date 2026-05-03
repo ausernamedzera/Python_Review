@@ -125,7 +125,8 @@ def hero_game(h, level):
     else:
         while True:
             print(f"MAGE ATTACK! MANA POWER LOADING")
-            mage.attack(mage.a_power)
+
+            h.take_damage(mage.attack(mage.a_power))
             print("*" * 51)
             print("Hero lost health!")
             health_show(h.health, mage.health)
@@ -233,8 +234,9 @@ def main():
     level = 0
     while True:
         if game_play(h,level) == "mage":
-            #burada hala hata var
+            h = hero_level(h, level)
             game_play(h, level)
+
         else:
             level += 1
 
