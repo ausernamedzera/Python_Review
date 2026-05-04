@@ -68,6 +68,12 @@ def get_character():
             for i in range(len(name)):
                 if name[i].isnumeric():
                     raise ValueError
+
+            #possible: try later
+            """
+            if not name.isalpha():
+                raise ValueError
+            """
         except ValueError:
             print("Invalid name")
         else:
