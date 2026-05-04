@@ -127,7 +127,13 @@ def hero_game(h, level):
         while True:
             print(
                 f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
-            attack = int(input(" "))
+            while True:
+                try:
+                    attack = int(input(" "))
+                except ValueError:
+                    print("Invalid input")
+                else:
+                    break
             mage.take_damage(h.attack(attack))
             print("*" * 51)
             print("mage lost health!")
