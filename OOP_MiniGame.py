@@ -65,6 +65,9 @@ def get_character():
                 raise ValueError
             if name.isnumeric():
                 raise ValueError
+            for i in range(len(name)):
+                if name[i].isnumeric():
+                    raise ValueError
         except ValueError:
             print("Invalid name")
         else:
