@@ -63,6 +63,8 @@ def get_character():
             name = input("Enter your hero name: ")
             if name.isspace() or len(name) == 0:
                 raise ValueError
+            if name.isnumeric():
+                raise ValueError
         except ValueError:
             print("Invalid name")
         else:
