@@ -58,10 +58,15 @@ class Mage(Character):
         return attack
 
 def get_character():
-    try:
-        name = input("Enter your hero name: ")
-    except ValueError:
-        print("Invalid name")
+    while True:
+        try:
+            name = input("Enter your hero name: ")
+            if name.isspace() or len(name) == 0:
+                raise ValueError
+        except ValueError:
+            print("Invalid name")
+        else:
+            break
     health = 100 #I want them to automatically set a default.
     a_power = 25
     armor = 200
