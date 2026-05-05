@@ -165,7 +165,7 @@ def hero_game(h, level):
 def get_attack():
     while True:
         try:
-            attack = int(input(" "))
+            attack = float(input(" "))
         except ValueError:
             print("Invalid input")
         else:
