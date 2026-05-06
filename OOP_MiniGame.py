@@ -54,7 +54,8 @@ class Mage(Character):
         self.health -= damage
 
     def attack(self, attack):
-        attack = self.mana * 0.005
+        mana_power = random.weibullvariate(0.003, 0.008)
+        attack = self.mana * mana_power
         return attack
 
 def get_character():
