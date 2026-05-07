@@ -238,7 +238,8 @@ def game_play(h, level):
     print("Game Over")
     if h.is_alive():
         print("winner is hero")
-        answer = input("Next level? (y/n): ")
+        print("Next level? (y/n): ")
+        answer = yn_answer()
         if answer == "y":
             return True
         else:
@@ -252,6 +253,12 @@ def game_play(h, level):
         else:
             print("Thanks for playing")
             return False
+
+
+def yn_answer():
+    answer = input()
+
+    return answer
 
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
 #but if the item is about mana, hero cannot gain any power.
