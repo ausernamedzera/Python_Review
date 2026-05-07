@@ -247,7 +247,8 @@ def game_play(h, level):
             return False
     else:
         print("winner is mage")
-        answer = input("wanna try again (y/n): ")
+        print("wanna try again (y/n): ")
+        answer = yn_answer()
         if answer == "y":
             return "mage"
         else:
