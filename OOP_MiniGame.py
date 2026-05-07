@@ -256,7 +256,13 @@ def game_play(h, level):
 
 
 def yn_answer():
-    answer = input()
+    while True:
+        try:
+            answer = str(input(" "))
+        except ValueError:
+            print("Invalid input")
+        else:
+            break
 
     return answer
 
