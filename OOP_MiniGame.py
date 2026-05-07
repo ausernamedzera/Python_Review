@@ -258,12 +258,13 @@ def game_play(h, level):
 def yn_answer():
     while True:
         try:
-            answer = str(input(" "))
+            answer = str(input(" ")).lower()
+            if answer != "y" or answer != "n" or answer != "yes" or answer != "no":
+                raise ValueError
         except ValueError:
             print("Invalid input")
         else:
             break
-
     return answer
 
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
