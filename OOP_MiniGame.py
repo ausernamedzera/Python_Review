@@ -200,9 +200,18 @@ def hero_level(h, level):
         print("over leveled up, you beat the all program")
         return False
 
-#every restart will have new choice
-def next_level():
-    pass
+def crit_rate(level):
+    if level == 0:  # aynı amaca hizmet eden iki değişken tanımlarsan, yazdığın kodu tabii karıştırısın (:
+
+    elif level == 1:
+
+    elif level == 2:
+
+    elif level == 3:
+
+    else:
+
+        return False
 
 #recods may store in a csv file 1-New Game / 2-Resume ???
 
