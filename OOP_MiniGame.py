@@ -128,6 +128,7 @@ def hero_game(h, level):
         while True:
             print(
                 f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
+            crit_rate(level)
             attack = get_attack()
             mage.take_damage(h.attack(attack))
             print("*" * 51)
@@ -201,16 +202,19 @@ def hero_level(h, level):
         return False
 
 def crit_rate(level):
-    if level == 0:  # aynı amaca hizmet eden iki değişken tanımlarsan, yazdığın kodu tabii karıştırısın (:
-
+    if level == 0:
+        crt_rate = 15/100
+        return crt_rate
     elif level == 1:
-
+        crt_rate = 30/100
+        return crt_rate
     elif level == 2:
-
+        crt_rate = 50/100
+        return crt_rate
     elif level == 3:
-
+        crt_rate = 80/100
+        return crt_rate
     else:
-
         return False
 
 #recods may store in a csv file 1-New Game / 2-Resume ???
