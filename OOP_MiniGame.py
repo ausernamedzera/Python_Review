@@ -128,8 +128,7 @@ def hero_game(h, level):
         while True:
             print(
                 f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
-            crit_rate(level)
-            attack = get_attack()
+            attack = get_attack()*crit_rate(level)
             mage.take_damage(h.attack(attack))
             print("*" * 51)
             print("mage lost health!")
@@ -281,7 +280,7 @@ def yn_answer():
     while True:
         try:
             answer = str(input(" ")).lower()
-            if answer != "y" or answer != "n" or answer != "yes" or answer != "no":
+            if answer not in ["y", "n", "yes", "no"]:
                 raise ValueError
         except ValueError:
             print("Invalid input")
