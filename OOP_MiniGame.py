@@ -203,15 +203,22 @@ def hero_level(h, level):
 
 def crit_rate(level):
     if level == 0:
-        crt_rate = 15/100
-        return crt_rate
+        if random.random == 0.15:
+            return 2
+        else:
+            return 1
     elif level == 1:
-        crt_rate = 30/100
-        return crt_rate
+        if random.random == 0.3:
+            return 2.5
+        else:
+            return 1
     elif level == 2:
-        crt_rate = 50/100
-        return crt_rate
+        if random.random == 0.5:
+            return 3
+        else:
+            return 1
     elif level == 3:
+        if random.random == 0.6:
         crt_rate = 80/100
         return crt_rate
     else:
