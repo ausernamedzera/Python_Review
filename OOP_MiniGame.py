@@ -284,11 +284,10 @@ def yn_answer():
             answer = str(input(" ")).lower()
             if answer not in ["y", "n", "yes", "no"]:
                 raise ValueError
+            else:
+                return answer
         except ValueError:
             print("Invalid input")
-        else:
-            break
-    return answer
 
 #a win means an upgrade, mage can drop some items when it is beaten, and those items may make grow hero
 #but if the item is about mana, hero cannot gain any power.
@@ -301,10 +300,12 @@ def main():
     level = 0
     while True:
         h.introduce()
-        if game_play(h,level) == "mage":
+        result = game_play(h, level)
+        if result == "mage":
             h_repeat = hero_level(h, level)
             game_play(h_repeat, level)
-
+        elif result == False:
+            break
         else:
             level += 1
 
