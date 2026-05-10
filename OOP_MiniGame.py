@@ -308,21 +308,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-"""""
-hero = get_character()
-mage = Mage("Magist", 80, 0, 200)
-
-hero.introduce()
-mage.introduce()
-
-hero.take_damage(30)
-mage.take_damage(30)
-
-print(hero.is_alive())
-print(mage.is_alive())
-print(hero.health)
-print(mage.health)
-
-"""
