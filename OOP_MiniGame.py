@@ -132,6 +132,7 @@ def hero_game(h, level):
             mage.take_damage(h.attack(attack))
             print("*" * 51)
             print("mage lost health!")
+            print(f"hero attack: {attack}")
             health_show(h.health, mage.health)
             if not mage.is_alive():
                 break
@@ -156,6 +157,7 @@ def hero_game(h, level):
             print(
                 f"HERO ATTACK!\nAttack power is {h.a_power}! Every power you over, you will lose your health!: attack wisely!")
             attack = get_attack()
+            print(f"hero attack: {attack}")
             mage.take_damage(h.attack(attack))
             print("mage lost health!")
             health_show(h.health, mage.health)
