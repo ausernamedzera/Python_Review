@@ -298,9 +298,9 @@ def yn_answer():
 
 def main():
     h = get_character()
-    h.introduce()
     level = 0
     while True:
+        h.introduce()
         if game_play(h,level) == "mage":
             h_repeat = hero_level(h, level)
             game_play(h_repeat, level)
