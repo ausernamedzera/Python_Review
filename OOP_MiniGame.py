@@ -302,6 +302,7 @@ def main():
         h.introduce()
         result = game_play(h, level)
         if result == "mage":
+            #fix this later
             h_repeat = hero_level(h, level)
             game_play(h_repeat, level)
         elif result == False:
