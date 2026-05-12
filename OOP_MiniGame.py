@@ -1,4 +1,6 @@
 import random
+from traceback import print_tb
+
 
 class Character:
     def __init__(self, name, health, attack_power):
@@ -262,20 +264,23 @@ def game_play(h, level):
         print("winner is hero")
         print("Next level? (y/n): ")
         answer = yn_answer()
-        if answer == "y":
-            return True
+        if answer == "y" or answer == "yes":
+            return "hero"
         else:
             print("Thanks for playing")
             return False
-    else:
+    elif not h.is_alive():
         print("winner is mage")
         print("wanna try again (y/n): ")
         answer = yn_answer()
-        if answer == "y":
+        if answer == "y" or answer=="yes":
             return "mage"
         else:
             print("Thanks for playing")
             return False
+    else:
+        print("something went wrong //def gameplay")
+        return False
 
 
 def yn_answer():
@@ -305,11 +310,13 @@ def main():
             #fix this later
             h = hero_level(h, level)
             game_play(h, level)
-
+            return result
         elif result == False:
             break
-        else:
+        elif result == "hero":
             level += 1
+        else:
+            print("something went wrong")
 
 if __name__ == "__main__":
     main()
