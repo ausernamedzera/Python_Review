@@ -310,6 +310,7 @@ def main():
             #fix this later
             h = hero_level(h, level)
             game_play(h, level)
+            #bug in here
             return result
         elif result == False:
             break
