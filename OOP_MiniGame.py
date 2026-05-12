@@ -301,9 +301,10 @@ hero = get_character()
 level_for_all = 0
 
 def main(h, level):
+    h.introduce() #this is also needs to be fixed
     while True:
-        h.introduce()
         result = game_play(h, level)
+
         if result == "mage":
             #fix this later
             h = hero_level(h, level)
