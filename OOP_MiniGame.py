@@ -57,7 +57,7 @@ class Mage(Character):
 
     def attack(self, attack):
         mana_power = random.weibullvariate(0.003, 0.008)
-        attack = self.mana * mana_power
+        attack = self.mana * 0.003
         return attack
 
 def get_character():
@@ -249,8 +249,7 @@ def game_play(h, level):
         hero_game(h, level)
     elif level == 1:
         #hero should get a level up
-        h_mid = hero_level(h, level)
-        h_mid.introduce()
+        h = hero_level(h, level)
         hero_game(h, level)
     elif level == 2:
         hero_game(h, level)
