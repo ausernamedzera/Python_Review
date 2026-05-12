@@ -298,20 +298,17 @@ def yn_answer():
 #but if the item is about mana, hero cannot gain any power.
 #the game will over when user wants finish the game or the user's health drop to zero
 
+hero = get_character()
+level_for_all = 0
 
-
-def main():
-    h = get_character()
-    level = 0
+def main(h, level):
     while True:
         h.introduce()
         result = game_play(h, level)
         if result == "mage":
             #fix this later
             h = hero_level(h, level)
-            game_play(h, level)
-            #bug in here
-            return result
+            main(h, level)
         elif result == False:
             break
         elif result == "hero":
@@ -320,4 +317,4 @@ def main():
             print("something went wrong")
 
 if __name__ == "__main__":
-    main()
+    main(hero, level_for_all)
