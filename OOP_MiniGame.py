@@ -253,8 +253,10 @@ def game_play(h, level):
         h = hero_level(h, level)
         hero_game(h, level)
     elif level == 2:
+        h = hero_level(h, level)
         hero_game(h, level)
     elif level == 3:
+        h = hero_level(h, level)
         hero_game(h, level)
     else:
         print("Invalid level")
