@@ -123,6 +123,7 @@ def get_mage(level):
 #hero
 def hero_game(h, level):
     mage = get_mage(level)
+    h.introduce()
     mage.introduce()
     t_f = true_false()
     print("FIGHT BEGUN!")
@@ -301,12 +302,10 @@ hero = get_character()
 level_for_all = 0
 
 def main(h, level):
-    h.introduce() #this is also needs to be fixed
     while True:
         result = game_play(h, level)
 
         if result == "mage":
-            #fix this later
             h = hero_level(h, level)
             main(h, level)
         elif result == False:
