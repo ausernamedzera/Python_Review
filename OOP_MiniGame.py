@@ -309,7 +309,6 @@ def main(h, level):
 
         if result == "mage":
             h = hero_level(h, level)
-            main(h, level)
         elif result == False:
             break
         elif result == "hero":
