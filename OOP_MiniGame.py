@@ -200,7 +200,14 @@ def hero_level(h, level):
         armor = 10000
         return Warrior(name, health, a_power, armor)
     elif level == 3:
+        name = h.name
+        health = 100000
+        a_power = 100000
+        armor = 100000
+        return Warrior(name, health, a_power, armor)
+    elif level == 4:
         print("YOU WON THE GAME CONGRATS")
+        return False
     else:
         print("over leveled up, you beat the all program")
         return False
